@@ -1,9 +1,4 @@
-
-#define BLACK 0;
-#define BLUE 1;
-
 #include <stdio.h>
-#include <windows.h>
 
 
 //-- 무슨 함수가 필요할까 (Basic)
@@ -16,17 +11,12 @@ void printBar(); //--> 분단선 출력
 void printBar2();
 void printBar3();
 
-// 텍스트 컬러
-void textcolor(int int_foreground, int int_background);
 
 //-- 프로그램 스타팅 포인트
-int main(void) {
-
-	
+int main_01(void) {
 
 	printBar();
-	textcolor(BLUE 1, BLACK 0);
-	printf("\t\t\t\t\t\tBASIC CACULATOR\n");
+	printf("\t\t\t\t\t B A S I C    C A C U L A T O R \n");
 	printBar();
 	printf("\n\n");
 
@@ -34,17 +24,21 @@ int main(void) {
 	printBar2();
 	printf("두개의 숫자를 입력하세요. : ");
 	scanf_s("%d %d", &num1, &num2);
-	printBar2();
-	printf("\n\n");
 
+	
+	
+	printf("\n\n\n");
+
+	printf("당신의 계산 결과입니다 -->\n");
 	printBar3();
 	printf("\n");
 	printf("\t\t%d + %d = %d", num1, num2, int_add(num1, num2));
-	printf("\t\t%d - %d = %d\n", num1, num2, int_minus(num1, num2));
+	printf("\t\t\t\t\t\t%d - %d = %d\n\n", num1, num2, int_minus(num1, num2));
 	printf("\t\t%d x %d = %d", num1, num2, int_multi(num1, num2));
-	printf("\t\t%d divide %d = %d\n\n", num1, num2, int_divide(num1, num2));
+	printf("\t\t\t\t\t\t%d divide %d = %d\n\n", num1, num2, int_divide(num1, num2));
 	printBar3();
 
+	printf("\n\n\n\n\t\t\t\t\t\t\t프로그램을 종료하시려면 아무키나 누르세요");
 	printf("\n\n\n");
 
 
@@ -76,16 +70,11 @@ void printBar() {
 }
 
 void printBar2() {
-	printf("------------------------------------------------------------------------------------------------------------\n");
+	printf("----------------------------------------------------------------------------------------------------------\n");
 }
 
 void printBar3() {
-	printf("\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	printf("............................................................................................................\n");
 }
 
 
-// 색상 구현부
-void textcolor(int int_foreground, int int_background) {
-	int color = int_foreground + int_background * 17;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
-}
